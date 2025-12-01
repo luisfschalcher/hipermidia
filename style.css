@@ -1,0 +1,142 @@
+* {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    padding: 25px;
+}
+
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    background-color: rgb(220, 220, 220);
+    border-radius: 15px;
+    padding: 15px;
+}
+
+header {
+    padding: 6px 0 18px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    margin: 0;
+    font-size: 40px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+.painel {
+    margin-top: 30px;
+    border-radius: 6px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06) inset;
+    background-color: rgb(200, 200, 200);
+}
+
+.filtros {
+    min-width: 160px;
+    padding-left: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    border-right: 1px solid rgba(0, 0, 0, 0.06);
+    padding-right: 18px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+}
+
+.controle {
+    display: flex;
+    flex: 1;
+    align-items: center;
+}
+
+.selecao {
+    width: 100%;
+    max-width: 700px;
+    height: 44px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    font-size: 15px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6) inset;
+    background-color: white;
+}
+
+.listaMentores {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+    padding-bottom: 20px;
+}
+
+.cardMentor {
+    background: white;
+    border-radius: 10px;
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+}
+
+.cardTop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nomeMentor {
+    font-weight: 700;
+    font-size: 16px;
+    padding-bottom: 3px;
+}
+
+.temaMentor {
+    font-size: 13px;
+    background: rgb(220, 220, 220);
+    padding: 5px 8px;
+    border-radius: 999px;
+}
+
+.bio {
+    font-size: 14px;
+    margin-top: 6px;
+    min-height: 36px;
+}
+
+.cardMeta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-top: 8px;
+    font-size: 13px;
+}
+
+.metaEsq span {
+    display: block;
+}
+
+.agendar {
+    background: #0b6b63;
+    color: white;
+    padding: 8px 10px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.vazio {
+    padding: 30px;
+    text-align: center;
+    grid-column: 1 / -1;
+}
