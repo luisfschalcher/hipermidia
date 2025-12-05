@@ -19,10 +19,75 @@
             <div class="controle">
                 <input id="tema" list="listaTemas" placeholder="Selecione a área" class="selecao" />
                 <datalist id="listaTemas"></datalist>
+                <input id="valor" type="text" inputmode="decimal" placeholder="Valor máximo" class="selecao" />
             </div>
         </section>
         <section id="listaMentores" class="listaMentores"></section>
     </main>
+    <h2>Criar nova mentoria</h2>
+
+    <form id="formCriar" class="formMentoria">
+        <label>Mentor:
+            <input type="text" name="mentor" required>
+        </label>
+
+        <label>Tema:
+            <input type="text" name="tema" required>
+        </label>
+
+        <label>Bio curta:
+            <input type="text" name="bioCurta" required>
+        </label>
+
+        <label>Slots disponíveis:
+            <input type="number" name="slotsDisponiveis" required>
+        </label>
+
+        <label>Valor da sessão:
+            <input type="number" name="valorSessao" required>
+        </label>
+
+        <label>Link da agenda:
+            <input type="text" name="linkAgenda" required>
+        </label>
+
+        <button type="submit">Criar Mentoria</button>
+    </form>
+    
+    <h2>Editar mentoria</h2>
+
+    <form id="formEditar" class="formMentoria" style="display:none;">
+        <input type="hidden" name="id">
+
+        <label>Mentor:
+            <input type="text" name="mentor" required>
+        </label>
+
+        <label>Tema:
+            <input type="text" name="tema" required>
+        </label>
+
+        <label>Bio curta:
+            <input type="text" name="bioCurta" required>
+        </label>
+
+        <label>Slots disponíveis:
+            <input type="number" name="slotsDisponiveis" required>
+        </label>
+
+        <label>Valor da sessão:
+            <input type="number" name="valorSessao" required>
+        </label>
+
+        <label>Link da agenda:
+            <input type="text" name="linkAgenda" required>
+        </label>
+
+        <button type="submit">Salvar</button>
+        <button type="button" id="cancelarEdicao">Cancelar</button>
+    </form>
+
+
 </body>
 
 </html>
