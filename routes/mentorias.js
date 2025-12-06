@@ -1,3 +1,4 @@
+// código para acesso por meio de http://localhost:4000/mentorias, de acordo com a especificação das rotas REST no vercel
 import express from 'express';
 import * as PostController from '../controllers/postController.js';
 

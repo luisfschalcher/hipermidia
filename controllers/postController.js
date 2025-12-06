@@ -1,9 +1,7 @@
 import * as PostService from '../services/postService.js';
 
-export const createPost = async (req, res) => {
+export const createPost = async (req, res) => { // em relação ao arquivo fornecido, os campos obviamente diferem, vou evitar comentar isso quando essa for a única mudança
   try {
-    console.log('POST /mentorias body:', req.body);
-
     const {
       mentor,
       tema,
@@ -13,7 +11,7 @@ export const createPost = async (req, res) => {
       linkAgenda
     } = req.body;
 
-    if (
+    if ( // aqui foi apenas uma mudança na forma de escrever pq eu acho melhor msm
       mentor == null || String(mentor).trim() === '' ||
       tema == null || String(tema).trim() === '' ||
       bioCurta == null || String(bioCurta).trim() === '' ||
@@ -23,7 +21,7 @@ export const createPost = async (req, res) => {
     ) {
       return res.status(400).json({ error: 'Todos os campos são obrigatórios.' });
     }
-
+    // garantir que slots e valor são numéricos
     const slotsNum = Number(slotsDisponiveis);
     const valorNum = Number(valorSessao);
 
@@ -43,7 +41,6 @@ export const createPost = async (req, res) => {
     res.status(201).json(newPost);
 
   } catch (error) {
-    console.error('Erro ao criar mentoria:', error);
     res.status(500).json({ error: 'Erro ao criar mentoria.', details: error.message });
   }
 };
@@ -53,7 +50,6 @@ export const getAllPosts = async (req, res) => {
         const posts = await PostService.getAllPosts();
         res.status(200).json(posts);
     } catch (error) {
-        console.error('Erro ao listar mentorias:', error.message);
         res.status(500).json({ error: 'Erro ao listar mentorias.' });
     }
 };
@@ -63,12 +59,13 @@ export const getPostById = async (req, res) => {
         const { id } = req.params;
         const post = await PostService.getPostById(id);
 
-        if (!post) return res.status(404).json({ error: 'Mentoria não encontrada.' });
+        if (!post) {
+          return res.status(404).json({ error: 'Mentoria não encontrada.' });
+        }
 
         res.status(200).json(post);
 
     } catch (error) {
-        console.error('Erro ao buscar mentoria:', error.message);
         res.status(500).json({ error: 'Erro ao buscar mentoria.' });
     }
 };
@@ -95,12 +92,13 @@ export const updatePost = async (req, res) => {
             linkAgenda
         );
 
-        if (!updated) return res.status(404).json({ error: 'Mentoria não encontrada.' });
+        if (!updated) {
+          return res.status(404).json({ error: 'Mentoria não encontrada.' });
+        }
 
         res.status(200).json(updated);
 
     } catch (error) {
-        console.error('Erro ao atualizar mentoria:', error.message);
         res.status(500).json({ error: 'Erro ao atualizar mentoria.' });
     }
 };
@@ -110,12 +108,13 @@ export const deletePost = async (req, res) => {
         const { id } = req.params;
         const deleted = await PostService.deletePost(id);
 
-        if (!deleted) return res.status(404).json({ error: 'Mentoria não encontrada.' });
+        if (!deleted) {
+          return res.status(404).json({ error: 'Mentoria não encontrada.' });
+        }
 
         res.status(204).send();
 
     } catch (error) {
-        console.error('Erro ao deletar mentoria:', error.message);
         res.status(500).json({ error: 'Erro ao deletar mentoria.' });
     }
 };

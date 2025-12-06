@@ -17,7 +17,7 @@ const database = new db.Database(dbPath, (err) => {
     initDatabase().catch(err => console.error('Erro ao inicializar banco:', err));
   }
 });
-
+// a única mudança com relação ao arquivo fornecido está aqui, onde eu adaptei a tabela para conter os campos necessários
 async function initDatabase() {
   return new Promise((resolve, reject) => {
     database.run(`
